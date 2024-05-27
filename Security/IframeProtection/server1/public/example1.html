@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section style="position: relative;">
+    <h1> Click Hijacking </h1>
+    <p>Simple click hijacking example here! Click the below button to know more.</p>
+    <iframe  src="http://localhost:3030/iframe1" style="opacity: 0.2; position: absolute; top:0"></iframe>
+    <button id="overlayed-button">Click Me!</button>
+  </section>
+  <script>
+    console.log(document.getElementById("overlayed-button"))
+    document.getElementById("overlayed-button").addEventListener("click", () => {
+      console.log("clicked")
+      alert("clicked");
+    })
+  </script>
+</body>
+</html>
