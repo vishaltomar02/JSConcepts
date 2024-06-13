@@ -23,6 +23,26 @@ function throttle(fn, throttleDelay) {
   return wrapper;
 }
 
+function throttleCopy(fn, throttleTime) {
+  let isThrottled = false, savedArgs, savedThis;
+  function wrapper() {
+    if (isThrottled) {
+      savedArgs = arguments;
+      savedThis = this;
+      return;
+    }
+    isThrottled = true;
+    fn.apply(this, arguments);
+    setTimeout(() => {
+      isThrottled = false;
+      if (savedArgs) {
+        wrapper.apply(savedThis, savedArgs);
+        savedArgs = savedThis = null;
+      }
+    }, throttleTime)
+  }
+  return wrapper
+}
 // f1000 passes calls to f at maximum once per 1000 ms
 
 let f1000 = throttle(f, 1000);

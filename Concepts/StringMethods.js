@@ -8,7 +8,7 @@
 
   let pos = -1;
   while ((pos = (str).toLowerCase().indexOf(target, pos + 1)) != -1) {
-    //console.log(pos);
+    console.log(pos);
   }
 }
 
