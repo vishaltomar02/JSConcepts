@@ -22,6 +22,8 @@ input[type='text'] {
   gap: 8px;
 }
 .iconBtn {
+  position: relative;
+  z-index: 1;
   background: transparent;
   padding: 0;
   margin: 0;
@@ -31,6 +33,49 @@ input[type='text'] {
   cursor: pointer;
   width: 32px;
 }
+
+button.resetBtn {
+  background-color: #08aacd;
+  color: #1b2330;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: 0.2s all;
+}
+
+.iconBtn:hover, button.resetBtn:hover {
+  transform: scale(1.1);
+}
+.iconBtn::after {
+  content: "";
+  z-index: 0;
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.6) translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  transition: 0.2s all;
+  background-color: rgb(8,170,205, 0.3);
+}
+.iconBtn:hover::after, .iconBtn.active::after {
+  opacity: 1;
+  transform: scale(1) translate(-50%, -50%);
+}
+
+.iconBtn svg {
+  transition: 0.2s transform;
+}
+
+.iconBtn.active svg{
+  transform: rotate(-90deg);
+}
+
 .timerText {
   font-size: 1.5rem;
   font-weight: 600;
