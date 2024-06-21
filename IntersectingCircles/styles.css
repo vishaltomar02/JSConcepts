@@ -1,0 +1,6 @@
+.circle {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid blue;
+}

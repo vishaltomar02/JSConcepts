@@ -26,7 +26,7 @@ function cacheDecorator(fn, hash) {
 }
 
 function hash() {
-  console.log(arguments)
+  console.log(arguments, Object.entries(arguments))
   return Object.values(arguments).reduce((acc, curr) => acc += `,${curr}`, "");
 }
 
@@ -35,3 +35,25 @@ worker.slow = cacheDecorator(worker.slow, hash);
 worker.slow(1, 3)
 worker.slow(1, 4)
 worker.slow(5, 8)
+
+
+const arr = [{ a: 1, b: 2 }, { c: 1, d: 2 }, { a: 1, b: 2 }];
+
+console.log(new Set(Object.entries(arr)));
+
+function removeDuplicates(arr) {
+  const stringsMap = {};
+  for (let i = 0; i < arr.length; i++) {
+    const stringifiedObj = JSON.stringify(arr[i]);
+    console.log("stringified", stringifiedObj);
+    if (!stringsMap.hasOwnProperty(stringifiedObj)) {
+      stringsMap[stringifiedObj] = 1;
+    }
+    else {
+      arr.splice(i, 1);
+    }
+  }
+}
+
+removeDuplicates(arr);
+console.log(arr)

@@ -1,0 +1,45 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tic-tac-toe-container {
+  margin-top: 2rem;
+}
+
+.tiles-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.tiles-row .tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(35, 232, 199);
+  color: aliceblue;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.won-container {
+  margin-top: 2rem;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  background-color: aquamarine;
+  border: 1px solid rgb(1, 182, 122);
+  color: black;
+}
