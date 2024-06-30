@@ -23,7 +23,7 @@ async function fn() {
     const result = await fetch("https://nosuchrul");
   }
   catch (err) {
-    console.log("message", err.name)
+    console.log("message", err.name, err.message)
   }
 }
 fn();

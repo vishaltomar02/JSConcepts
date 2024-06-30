@@ -19,7 +19,7 @@ let range = {
   to: 5,
 
   *[Symbol.iterator]() {
-    // Below code works as the iterator expects a next method which returns an object with value and
+    // Below code works as the iterator expects an object with next method which returns an object with value and
     //done property and this is exactly what a generator method does
     for (let value = this.from; value <= this.to; value++) {
       yield value;
@@ -51,7 +51,7 @@ function* generatePassCodes() {
 }
 
 let str = "";
-
+console.log("passcodes", generatePassCodes);
 for (let code of generatePassCodes()) {
   str += String.fromCharCode(code);
 }

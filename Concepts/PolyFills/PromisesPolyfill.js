@@ -65,7 +65,7 @@ class CustomPromise {
       for (let i = 0; i < promises.length; i++) {
         const currPromise = promises[i];
         if (!(currPromise instanceof CustomPromise)) {
-          promiseResult.push(CustomPromise.resolve(currPromise));
+          promiseResult[i] = CustomPromise.resolve(currPromise);
         }
         else {
           promiseResult.push(currPromise);

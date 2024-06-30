@@ -14,13 +14,13 @@ let meet = {
 
 room.occupiedBy = meet; // Circular reference
 
-// console.log(JSON.stringify(meet, function replacer(key, value) {
-//   console.log({ key, value });
-//   return key === "occupiedBy" ? undefined : value;
-// }, 4));
+console.log(JSON.stringify(meet, function replacer(key, value) {
+  console.log({ key, value });
+  return key === "occupiedBy" ? undefined : value;
+}, 4));
 
 
-// PARSING 
+// PARSING
 
 let json = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}'
 // need to provide a reviver function to parse date to date object

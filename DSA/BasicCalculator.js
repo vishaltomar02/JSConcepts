@@ -46,4 +46,6 @@ var calculate = function (s) {
   return sum;
 }
 
-console.log(calculate("(1 + (4 + 5 + 2) - 3) + (6 + 8)"));
+
+// NOT WORKING PROPERLY >>> RESOLVE THE CODE
+console.log(calculate("(1 + (4 + 5 + 2) - 3) + (16 + 8)"));

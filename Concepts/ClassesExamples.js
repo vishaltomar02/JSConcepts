@@ -16,7 +16,7 @@ class Button {
     this.value = value;
   }
   click() {
-    // console.log(this, this.value);
+    console.log("clicked", this, this.value);
   }
 }
 
@@ -78,7 +78,7 @@ const newClock = new ExtendedClock({
   template: 'h:m:s',
   ticks: 2000
 });
-// newClock.start();
+newClock.start();
 
 
 

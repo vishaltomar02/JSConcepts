@@ -9,6 +9,7 @@ function aclean(arr) {
 
   for (let word of arr) {
     let sorted = word.toLowerCase().split("").sort().join("");
+    console.log(sorted)
     map.set(sorted, word);
   }
   return Array.from(map.values());
